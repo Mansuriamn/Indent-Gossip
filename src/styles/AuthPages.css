@@ -1,0 +1,106 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 1rem;
+  position: relative;
+}
+
+.auth-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.auth-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/placeholder.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, black);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 28rem;
+  z-index: 10;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password {
+  font-size: 0.75rem;
+  color: #ffa07a;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field .input {
+  padding-right: 4rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #ffa07a;
+}
+
+.auth-footer {
+  text-align: center;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.auth-link {
+  color: #ffa07a;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.w-full {
+  width: 100%;
+}

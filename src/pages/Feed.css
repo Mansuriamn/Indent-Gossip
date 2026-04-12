@@ -1,0 +1,151 @@
+.feed-page {
+  padding: 1.5rem 0 5rem;
+  min-height: calc(100vh - 128px);
+}
+
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feed-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.feed-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Posts */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.post-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info { display: flex; flex-direction: column; }
+.user-name  { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+.post-meta  { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
+
+/* Flag Badges */
+.post-flag-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.flag-green { background: #dcfce7; color: #166534; }
+.flag-red   { background: #fee2e2; color: #991b1b; }
+.flag-blank { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+.post-content {
+  padding: 14px 16px;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Tags */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.post-tag {
+  padding: 3px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.action-buttons { display: flex; gap: 12px; }
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.action-btn:hover       { color: var(--primary); background: rgba(255,160,122,0.1); }
+.action-btn.active.liked    { color: var(--primary); }
+.action-btn.active.disliked { color: #6366f1; }
+.action-btn.reported    { color: var(--error); }
+
+/* Empty state */
+.no-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+.no-posts i   { font-size: 2.5rem; opacity: 0.4; }
+.no-posts p   { font-size: 1rem; font-weight: 500; }
+.no-posts small { font-size: 0.8rem; opacity: 0.7; }
+
+@media (max-width: 640px) {
+  .feed-header { flex-direction: column; align-items: flex-start; }
+  .feed-tabs { width: 100%; }
+  .post-content { font-size: 0.9rem; }
+}
